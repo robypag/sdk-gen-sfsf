@@ -1,0 +1,50 @@
+"use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = require("@sap-cloud-sdk/core");
+var PerGlobalInfoInd_1 = require("./PerGlobalInfoInd");
+/**
+ * Request builder class for operations supported on the [[PerGlobalInfoInd]] entity.
+ */
+var PerGlobalInfoIndRequestBuilder = /** @class */ (function (_super) {
+    __extends(PerGlobalInfoIndRequestBuilder, _super);
+    function PerGlobalInfoIndRequestBuilder() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    /**
+     * Returns a request builder for retrieving one `PerGlobalInfoInd` entity based on its keys.
+     * @param country Key property. See [[PerGlobalInfoInd.country]].
+     * @param personIdExternal Key property. See [[PerGlobalInfoInd.personIdExternal]].
+     * @param startDate Key property. See [[PerGlobalInfoInd.startDate]].
+     * @returns A request builder for creating requests to retrieve one `PerGlobalInfoInd` entity based on its keys.
+     */
+    PerGlobalInfoIndRequestBuilder.prototype.getByKey = function (country, personIdExternal, startDate) {
+        return new core_1.GetByKeyRequestBuilder(PerGlobalInfoInd_1.PerGlobalInfoInd, {
+            country: country,
+            personIdExternal: personIdExternal,
+            startDate: startDate
+        });
+    };
+    /**
+     * Returns a request builder for querying all `PerGlobalInfoInd` entities.
+     * @returns A request builder for creating requests to retrieve all `PerGlobalInfoInd` entities.
+     */
+    PerGlobalInfoIndRequestBuilder.prototype.getAll = function () {
+        return new core_1.GetAllRequestBuilder(PerGlobalInfoInd_1.PerGlobalInfoInd);
+    };
+    return PerGlobalInfoIndRequestBuilder;
+}(core_1.RequestBuilder));
+exports.PerGlobalInfoIndRequestBuilder = PerGlobalInfoIndRequestBuilder;
+//# sourceMappingURL=PerGlobalInfoIndRequestBuilder.js.map

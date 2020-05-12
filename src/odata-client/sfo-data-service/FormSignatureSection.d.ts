@@ -1,0 +1,138 @@
+import { FormSignatureSectionRequestBuilder } from './FormSignatureSectionRequestBuilder';
+import { BigNumber } from 'bignumber.js';
+import { AllFields, BigNumberField, CustomField, Entity, EntityBuilderType, Link, NumberField, Selectable, StringField } from '@sap-cloud-sdk/core';
+/**
+ * This class represents the entity "FormSignatureSection" of service "SFOData".
+ */
+export declare class FormSignatureSection extends Entity implements FormSignatureSectionType {
+    /**
+     * Technical entity name for FormSignatureSection.
+     */
+    static _entityName: string;
+    /**
+     * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
+     * Technical service name for FormSignatureSection.
+     */
+    static _serviceName: string;
+    /**
+     * Default url path for the according service.
+     */
+    static _defaultServicePath: string;
+    /**
+     * formContentId.
+     */
+    formContentId: BigNumber;
+    /**
+     * formDataId.
+     */
+    formDataId: BigNumber;
+    /**
+     * sectionDescription.
+     * @nullable
+     */
+    sectionDescription?: string;
+    /**
+     * sectionIndex.
+     */
+    sectionIndex: number;
+    /**
+     * sectionName.
+     * @nullable
+     */
+    sectionName?: string;
+    /**
+     * One-to-many navigation property to the [[FormSignature]] entity.
+     */
+    signatures: FormSignature[];
+    /**
+     * Returns an entity builder to construct instances `FormSignatureSection`.
+     * @returns A builder that constructs instances of entity type `FormSignatureSection`.
+     */
+    static builder(): EntityBuilderType<FormSignatureSection, FormSignatureSectionTypeForceMandatory>;
+    /**
+     * Returns a request builder to construct requests for operations on the `FormSignatureSection` entity type.
+     * @returns A `FormSignatureSection` request builder.
+     */
+    static requestBuilder(): FormSignatureSectionRequestBuilder;
+    /**
+     * Returns a selectable object that allows the selection of custom field in a get request for the entity `FormSignatureSection`.
+     * @param fieldName Name of the custom field to select
+     * @returns A builder that constructs instances of entity type `FormSignatureSection`.
+     */
+    static customField(fieldName: string): CustomField<FormSignatureSection>;
+    /**
+     * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
+     * @returns An object containing all instance variables + custom fields.
+     */
+    toJSON(): {
+        [key: string]: any;
+    };
+}
+import { FormSignature, FormSignatureType } from './FormSignature';
+export interface FormSignatureSectionType {
+    formContentId: BigNumber;
+    formDataId: BigNumber;
+    sectionDescription?: string;
+    sectionIndex: number;
+    sectionName?: string;
+    signatures: FormSignatureType[];
+}
+export interface FormSignatureSectionTypeForceMandatory {
+    formContentId: BigNumber;
+    formDataId: BigNumber;
+    sectionDescription: string;
+    sectionIndex: number;
+    sectionName: string;
+    signatures: FormSignatureType[];
+}
+export declare namespace FormSignatureSection {
+    /**
+     * Static representation of the [[formContentId]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    const FORM_CONTENT_ID: BigNumberField<FormSignatureSection>;
+    /**
+     * Static representation of the [[formDataId]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    const FORM_DATA_ID: BigNumberField<FormSignatureSection>;
+    /**
+     * Static representation of the [[sectionDescription]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    const SECTION_DESCRIPTION: StringField<FormSignatureSection>;
+    /**
+     * Static representation of the [[sectionIndex]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    const SECTION_INDEX: NumberField<FormSignatureSection>;
+    /**
+     * Static representation of the [[sectionName]] property for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    const SECTION_NAME: StringField<FormSignatureSection>;
+    /**
+     * Static representation of the one-to-many navigation property [[signatures]] for query construction.
+     * Use to reference this property in query operations such as 'select' in the fluent request API.
+     */
+    const SIGNATURES: Link<FormSignatureSection, FormSignature>;
+    /**
+     * All fields of the FormSignatureSection entity.
+     */
+    const _allFields: Array<BigNumberField<FormSignatureSection> | StringField<FormSignatureSection> | NumberField<FormSignatureSection> | Link<FormSignatureSection, FormSignature>>;
+    /**
+     * All fields selector.
+     */
+    const ALL_FIELDS: AllFields<FormSignatureSection>;
+    /**
+     * All key fields of the FormSignatureSection entity.
+     */
+    const _keyFields: Array<Selectable<FormSignatureSection>>;
+    /**
+     * Mapping of all key field names to the respective static field property FormSignatureSection.
+     */
+    const _keys: {
+        [keys: string]: Selectable<FormSignatureSection>;
+    };
+}
+//# sourceMappingURL=FormSignatureSection.d.ts.map

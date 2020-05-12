@@ -1,0 +1,151 @@
+/*
+ * Copyright (c) 2020 SAP SE or an SAP affiliate company. All rights reserved.
+ *
+ * This is a generated file powered by the SAP Cloud SDK for JavaScript.
+ */
+import { CompanyProvisionerRequestBuilder } from './CompanyProvisionerRequestBuilder';
+import { AllFields, CustomField, Entity, EntityBuilderType, NumberField, Selectable, StringField } from '@sap-cloud-sdk/core';
+
+/**
+ * This class represents the entity "CompanyProvisioner" of service "SFOData".
+ */
+export class CompanyProvisioner extends Entity implements CompanyProvisionerType {
+  /**
+   * Technical entity name for CompanyProvisioner.
+   */
+  static _entityName = 'CompanyProvisioner';
+  /**
+   * @deprecated Since v1.0.1 Use [[_defaultServicePath]] instead.
+   * Technical service name for CompanyProvisioner.
+   */
+  static _serviceName = 'SFOData';
+  /**
+   * Default url path for the according service.
+   */
+  static _defaultServicePath = 'VALUE_IS_UNDEFINED';
+  /**
+   * createdAdminAccountNumber.
+   * @nullable
+   */
+  createdAdminAccountNumber?: number;
+  /**
+   * email.
+   * @nullable
+   */
+  email?: string;
+  /**
+   * id.
+   */
+  id!: string;
+  /**
+   * name.
+   */
+  name!: string;
+  /**
+   * status.
+   * @nullable
+   */
+  status?: string;
+
+  /**
+   * Returns an entity builder to construct instances `CompanyProvisioner`.
+   * @returns A builder that constructs instances of entity type `CompanyProvisioner`.
+   */
+  static builder(): EntityBuilderType<CompanyProvisioner, CompanyProvisionerTypeForceMandatory> {
+    return Entity.entityBuilder(CompanyProvisioner);
+  }
+
+  /**
+   * Returns a request builder to construct requests for operations on the `CompanyProvisioner` entity type.
+   * @returns A `CompanyProvisioner` request builder.
+   */
+  static requestBuilder(): CompanyProvisionerRequestBuilder {
+    return new CompanyProvisionerRequestBuilder();
+  }
+
+  /**
+   * Returns a selectable object that allows the selection of custom field in a get request for the entity `CompanyProvisioner`.
+   * @param fieldName Name of the custom field to select
+   * @returns A builder that constructs instances of entity type `CompanyProvisioner`.
+   */
+  static customField(fieldName: string): CustomField<CompanyProvisioner> {
+    return Entity.customFieldSelector(fieldName, CompanyProvisioner);
+  }
+
+  /**
+   * Overwrites the default toJSON method so that all instance variables as well as all custom fields of the entity are returned.
+   * @returns An object containing all instance variables + custom fields.
+   */
+  toJSON(): { [key: string]: any } {
+    return { ...this, ...this._customFields };
+  }
+}
+
+export interface CompanyProvisionerType {
+  createdAdminAccountNumber?: number;
+  email?: string;
+  id: string;
+  name: string;
+  status?: string;
+}
+
+export interface CompanyProvisionerTypeForceMandatory {
+  createdAdminAccountNumber: number;
+  email: string;
+  id: string;
+  name: string;
+  status: string;
+}
+
+export namespace CompanyProvisioner {
+  /**
+   * Static representation of the [[createdAdminAccountNumber]] property for query construction.
+   * Use to reference this property in query operations such as 'select' in the fluent request API.
+   */
+  export const CREATED_ADMIN_ACCOUNT_NUMBER: NumberField<CompanyProvisioner> = new NumberField('createdAdminAccountNumber', CompanyProvisioner, 'Edm.Int32');
+  /**
+   * Static representation of the [[email]] property for query construction.
+   * Use to reference this property in query operations such as 'select' in the fluent request API.
+   */
+  export const EMAIL: StringField<CompanyProvisioner> = new StringField('email', CompanyProvisioner, 'Edm.String');
+  /**
+   * Static representation of the [[id]] property for query construction.
+   * Use to reference this property in query operations such as 'select' in the fluent request API.
+   */
+  export const ID: StringField<CompanyProvisioner> = new StringField('id', CompanyProvisioner, 'Edm.String');
+  /**
+   * Static representation of the [[name]] property for query construction.
+   * Use to reference this property in query operations such as 'select' in the fluent request API.
+   */
+  export const NAME: StringField<CompanyProvisioner> = new StringField('name', CompanyProvisioner, 'Edm.String');
+  /**
+   * Static representation of the [[status]] property for query construction.
+   * Use to reference this property in query operations such as 'select' in the fluent request API.
+   */
+  export const STATUS: StringField<CompanyProvisioner> = new StringField('status', CompanyProvisioner, 'Edm.String');
+  /**
+   * All fields of the CompanyProvisioner entity.
+   */
+  export const _allFields: Array<NumberField<CompanyProvisioner> | StringField<CompanyProvisioner>> = [
+    CompanyProvisioner.CREATED_ADMIN_ACCOUNT_NUMBER,
+    CompanyProvisioner.EMAIL,
+    CompanyProvisioner.ID,
+    CompanyProvisioner.NAME,
+    CompanyProvisioner.STATUS
+  ];
+  /**
+   * All fields selector.
+   */
+  export const ALL_FIELDS: AllFields<CompanyProvisioner> = new AllFields('*', CompanyProvisioner);
+  /**
+   * All key fields of the CompanyProvisioner entity.
+   */
+  export const _keyFields: Array<Selectable<CompanyProvisioner>> = [CompanyProvisioner.ID];
+  /**
+   * Mapping of all key field names to the respective static field property CompanyProvisioner.
+   */
+  export const _keys: { [keys: string]: Selectable<CompanyProvisioner> } = CompanyProvisioner._keyFields.reduce((acc: { [keys: string]: Selectable<CompanyProvisioner> }, field: Selectable<CompanyProvisioner>) => {
+    acc[field._fieldName] = field;
+    return acc;
+  }, {});
+}
